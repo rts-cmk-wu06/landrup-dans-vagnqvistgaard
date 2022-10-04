@@ -1,10 +1,13 @@
-import { motion } from "framer-motion"; //move to actual usage later (in 'Welcome')
+
+
+import Welcome from './pages/Welcome';
 
 function App() {
 
 
   return (
     <>
+      <Welcome />
 
     </>
   )
