@@ -27,18 +27,20 @@ function Welcome() {
                         width: '78vw',
                     }} alt=''>
                 </img>
-                <motion.img //put in a 'Link to' here, when routing is ready...
-                    src={buttonStart} className='fixed'
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.5 }}
-                    style={{
-                        left: '17vw',
-                        top: '88vh',
-                        width: '66vw',
-                        height: '7vh',
-                    }} alt=''>
-                </motion.img>
+                <Link to="/activities">
+                    <motion.img
+                        src={buttonStart} className='fixed'
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.5 }}
+                        style={{
+                            left: '17vw',
+                            top: '88vh',
+                            width: '66vw',
+                            height: '7vh',
+                        }} alt=''>
+                    </motion.img>
+                </Link>
             </div>
         </>
     )
