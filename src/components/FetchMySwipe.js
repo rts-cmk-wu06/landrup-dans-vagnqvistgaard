@@ -1,6 +1,4 @@
-//so, here we: fetch into array, write texts, dynamically create the swipe items, 
-//make one of the items clickable and linked.
-//import { Link } from 'react-router-dom';
+
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -87,5 +85,18 @@ export default FetchMySwipe;
 
 
 
+
+
+
+
+
+
+    //<>
+    //<SwipeItem id={'hdgf'} />
+    //<SwipeItem id={'nmlksd'} />
+    //<SwipeItem id={'jasiv'} />
+    //<SwipeItem id={'skjdhfasi'} />
+    //<SwipeItem id={'kjadu'} />
+    //</>
 
 
