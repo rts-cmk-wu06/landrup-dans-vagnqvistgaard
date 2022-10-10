@@ -1,6 +1,6 @@
 //Velkommen....
 import { Link } from 'react-router-dom';
-import { motion } from "framer-motion"; //move to actual usage later (in 'Welcome')
+import { motion } from "framer-motion";
 
 import backGround from './../assetses/background.png';
 import logoImg from './../assetses/logo.png';

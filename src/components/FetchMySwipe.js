@@ -1,14 +1,10 @@
 //so, here we: fetch into array, write texts, dynamically create the swipe items, 
 //make one of the items clickable and linked.
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 import SwipeItem from './SwipeItem';
-
-
-
-
 
 
 
@@ -24,12 +20,13 @@ function FetchMySwipe() {
 
     useEffect(() => {
         const getData = async () => {
-            const data = await axios.get(`${baseUrl}activities`);  //aka response.data =await etc.....
-            //console.log(data);
+            const data = await axios.get(`${baseUrl}activities`);
             setData(data);
         };
         getData();
     }, []);
+
+    /**************** data processing *****************************/
 
     for (let key in data.data) {
         if (key < 6) {
@@ -41,20 +38,30 @@ function FetchMySwipe() {
     const listItems = dataArray.map((dataItem, index) =>
         <li key={index}>
             {<SwipeItem
+                detailsID={index}
                 url={dataItem.asset.url}
                 name={dataItem.name}
                 minAge={`${dataItem.minAge} år`} />
             }</li>
     );
-
+    /****************************************************************/
 
     return (
         <>
-            <div id='container' className='mx-auto px-0 py-1 m-2'
-                style={{}}>
+            <div id='container' className='mx-auto px-0 py-1'
+                style={{
+                    backgroundColor: '#5E2E53',
+                    //width: '100vw',
+                }}>
+                <div id='filler' className=''
+                    style={{
+                        width: '100vw',
+                        height: '13vh',
+                    }}>
+                </div>
                 <div id='swiper' className=''
                     style={{
-                        //position: 'relative',
+                        position: 'relative',
                         overflow: 'hidden',
                     }}>
                     <div id='swipes' className='p-0 m-0'
@@ -75,10 +82,10 @@ function FetchMySwipe() {
     )
 
 }
+
 export default FetchMySwipe;
 
 
 
 
 
-/*https://reactjs.org/docs/lists-and-keys.html*/
